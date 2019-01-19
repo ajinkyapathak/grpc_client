@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package OrderUpdateEvent;
+
+service CustomerOrderUpdate {
+	rpc OrderUpdate(OrderItemInfo) returns (Acknowledgement) {}
+}
+
+message OrderItemInfo {
+	string orderId = 1;
+	string wmsId = 2;
+	int64 createdById = 3;
+	int64 createdOn = 4;
+	string createdByName = 5;
+	string source = 6;
+	string wmsStatus = 7;
+	string crmStatus = 8;
+	string farmerId = 9;
+	string itemName = 10;
+	string skuCode = 11;
+	int32 quantity = 12;
+	string orderItemId = 17;
+	string levelOneCategroy = 21;
+	string levelTwoCategory = 22;
+	string levelThreeCategory = 23;
+	float orderGrandTotal = 24;
+	float orderItemTotalPrice = 25;
+	bool isEditedOrder = 26;
+	string previousOrderId = 27;
+	int64 orderConfirmedOn = 28;
+	string orderItemUUID = 29;
+	string farmerName = 30;
+	string mobile1 = 31;
+	string mobile2 = 32;
+	string mobile3 = 33;
+	int64 orderConfirmedById = 34;
+	string orderConfirmedByName =35;
+	int64 orderUpdatedOn = 36;
+	int64 orderUpdatedById = 37;
+	string orderUpdatedByName = 38;
+	float orderItemSellingPrice = 39;
+
+}
+
+message Acknowledgement {
+	bool acknowledged = 1;
+}
